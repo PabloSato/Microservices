@@ -11,23 +11,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{AD11
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "src\Services\Catalog\Catalog.API\Catalog.API.csproj", "{F766EA45-3BCA-40BF-9BD7-22190D1F0D78}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{95B3D677-0978-4542-AB79-A5B83E66756C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "src\Services\Basket\Basket.API\Basket.API.csproj", "{942FBBD6-DDBF-4D70-9325-440651066722}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F766EA45-3BCA-40BF-9BD7-22190D1F0D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F766EA45-3BCA-40BF-9BD7-22190D1F0D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F766EA45-3BCA-40BF-9BD7-22190D1F0D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F766EA45-3BCA-40BF-9BD7-22190D1F0D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{942FBBD6-DDBF-4D70-9325-440651066722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{942FBBD6-DDBF-4D70-9325-440651066722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{942FBBD6-DDBF-4D70-9325-440651066722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{942FBBD6-DDBF-4D70-9325-440651066722}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AE4CBF92-6C4C-4882-A0D4-441E4C07752F} = {FCAFD084-19B5-4805-B3CB-8AF92AEB3AEC}
 		{AD111CED-CA6B-445A-9169-44C83142AF89} = {AE4CBF92-6C4C-4882-A0D4-441E4C07752F}
 		{F766EA45-3BCA-40BF-9BD7-22190D1F0D78} = {AD111CED-CA6B-445A-9169-44C83142AF89}
+		{95B3D677-0978-4542-AB79-A5B83E66756C} = {AE4CBF92-6C4C-4882-A0D4-441E4C07752F}
+		{942FBBD6-DDBF-4D70-9325-440651066722} = {95B3D677-0978-4542-AB79-A5B83E66756C}
 	EndGlobalSection
 EndGlobal
