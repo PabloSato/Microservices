@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Ordering.Application.Contracts.Persistence;
+using Ordering.Application.Exceptions;
 using Ordering.Domain;
 
 namespace Ordering.Application.Features.Orders.Commands.UpdateOrder;
@@ -24,8 +25,8 @@ public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand>
         var orderToUpdate = await _orderRepository.GetByIdAsync(request.Id);
         if (orderToUpdate == null)
         {
-            _logger.LogError("Order not found on database.");
-            //throw new NotFoun
+            
+            throw new NotFoundException(nameof(Order), request.Id);
         }
 
         _mapper.Map(request, orderToUpdate, typeof(UpdateOrderCommand), typeof(Order));
