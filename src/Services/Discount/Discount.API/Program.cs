@@ -8,7 +8,11 @@ namespace Discount.API
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            // Vamos a migrar la DB de Postgres y la vamos a Seed
+            host.MigrateDatabase<Program>();
+            host.Run();
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
