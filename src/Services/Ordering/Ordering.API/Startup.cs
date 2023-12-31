@@ -1,5 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 using Ordering.Application;
+using Ordering.Infraestructure;
 
 namespace Basket.API
 {
@@ -15,8 +16,9 @@ namespace Basket.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddApplicationServices();
-            //services.AddInfraestrutureServices();
+            services.AddApplicationServices();
+            services.AddInfraestructureServices(Configuration);
+        
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
