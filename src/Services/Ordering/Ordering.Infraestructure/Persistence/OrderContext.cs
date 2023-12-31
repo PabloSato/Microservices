@@ -1,34 +1,34 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Ordering.Domain;
 using Ordering.Domain.Common;
+using Ordering.Domain.Entities;
 
-namespace Ordering.Infraestructure.Persistence;
-
-public class OrderContext : DbContext
+namespace Ordering.Infraestructure.Persistence
 {
-    public OrderContext(DbContextOptions<OrderContext> options) : base(options)
+    public class OrderContext : DbContext
     {
-    }
-
-    public DbSet<Order> Orders { get; set; }
-
-    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-    {
-        foreach (var entry in ChangeTracker.Entries<EntityBase>())
+        public OrderContext(DbContextOptions<OrderContext> options) : base(options)
         {
-            switch (entry.State)
-            {
-                case EntityState.Added:
-                    entry.Entity.CreatedDate = DateTime.Now;
-                    entry.Entity.CreatedBy = "swn";
-                    break;
-                case EntityState.Modified:
-                    entry.Entity.LastModifiedDate = DateTime.Now;
-                    entry.Entity.LastModifiedBy = "swn";
-                    break;
-            }
         }
 
-        return base.SaveChangesAsync(cancellationToken);
+        public DbSet<Order> Orders { get; set; }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+        {
+            foreach (var entry in ChangeTracker.Entries<EntityBase>())
+            {
+                switch (entry.State)
+                {
+                    case EntityState.Added:
+                        entry.Entity.CreatedDate = DateTime.Now;
+                        entry.Entity.CreatedBy = "swn";
+                        break;
+                    case EntityState.Modified:
+                        entry.Entity.LastModifiedDate = DateTime.Now;
+                        entry.Entity.LastModifiedBy = "swn";
+                        break;
+                }
+            }
+            return base.SaveChangesAsync(cancellationToken);
+        }
     }
 }

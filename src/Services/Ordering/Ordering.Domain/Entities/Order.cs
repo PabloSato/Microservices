@@ -1,6 +1,6 @@
 ﻿using Ordering.Domain.Common;
 
-namespace Ordering.Domain;
+namespace Ordering.Domain.Entities;
 
 public class Order: EntityBase
 {

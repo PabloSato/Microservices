@@ -1,4 +1,4 @@
-﻿using Ordering.Domain;
+﻿using Ordering.Domain.Entities;
 
 namespace Ordering.Application.Contracts.Persistence;
 
